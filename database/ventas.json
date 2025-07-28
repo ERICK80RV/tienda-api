@@ -1,0 +1,45 @@
+[
+  {
+    "usuario": "Ana Catalina Brenes",
+    "fecha": { "$date": "2025-06-08T00:00:00.000Z" },
+    "prendas": [
+      { "nombre": "Camiseta básica", "cantidad": 2 },
+      { "nombre": "Jeans ajustados", "cantidad": 1 }
+    ],
+    "total": 30500
+  },
+  {
+    "usuario": "Carlos Jiménez",
+    "fecha": { "$date": "2025-06-07T00:00:00.000Z" },
+    "prendas": [
+      { "nombre": "Camiseta básica", "cantidad": 1 },
+      { "nombre": "Chaqueta de cuero", "cantidad": 1 }
+    ],
+    "total": 40500
+  },
+  {
+    "usuario": "Luis Fernando Solís",
+    "fecha": { "$date": "2025-06-06T00:00:00.000Z" },
+    "prendas": [
+      { "nombre": "Camiseta estampada", "cantidad": 3 }
+    ],
+    "total": 21000
+  },
+  {
+    "usuario": "María José Vargas",
+    "fecha": { "$date": "2025-06-09T00:00:00.000Z" },
+    "prendas": [
+      { "nombre": "Chaqueta de cuero", "cantidad": 1 }
+    ],
+    "total": 32000
+  },
+  {
+    "usuario": "Carlos Jiménez",
+    "fecha": { "$date": "2025-06-10T00:00:00.000Z" },
+    "prendas": [
+      { "nombre": "Jeans ajustados", "cantidad": 2 },
+      { "nombre": "Camiseta básica", "cantidad": 1 }
+    ],
+    "total": 36900
+  }
+]

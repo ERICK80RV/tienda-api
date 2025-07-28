@@ -1,0 +1,34 @@
+[
+  {
+    "nombre": "Camiseta básica",
+    "talla": "M",
+    "color": "Blanca",
+    "precio": 8500,
+    "marca": "UrbanStyle",
+    "stock": 15
+  },
+  {
+    "nombre": "Jeans ajustados",
+    "talla": "L",
+    "color": "Azul",
+    "precio": 13900,
+    "marca": "FashionWear",
+    "stock": 12
+  },
+  {
+    "nombre": "Chaqueta de cuero",
+    "talla": "M",
+    "color": "Negra",
+    "precio": 32000,
+    "marca": "UrbanStyle",
+    "stock": 8
+  },
+  {
+    "nombre": "Camiseta estampada",
+    "talla": "S",
+    "color": "Roja",
+    "precio": 7000,
+    "marca": "EcoModa",
+    "stock": 20
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "nombre": "Ana Catalina Brenes",
+    "correo": "ana.brenes@modacorp.com",
+    "telefono": "8888-1111",
+    "direccion": "San José, Costa Rica"
+  },
+  {
+    "nombre": "Luis Fernando Solís",
+    "correo": "luis.solis@modacorp.com",
+    "telefono": "8888-2222",
+    "direccion": "Cartago, Costa Rica"
+  },
+  {
+    "nombre": "María José Vargas",
+    "correo": "maria.vargas@modacorp.com",
+    "telefono": "8888-3333",
+    "direccion": "Heredia, Costa Rica"
+  },
+  {
+    "nombre": "Carlos Jiménez",
+    "correo": "carlos.jimenez@modacorp.com",
+    "telefono": "8999-1234",
+    "direccion": "Alajuela, Costa Rica"
+  }
+]

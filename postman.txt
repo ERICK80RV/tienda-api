@@ -1,0 +1,76 @@
+Ejemplos de Peticiones para Postman (API Tienda de Ropa)
+
+1. Usuarios
+
+GET /usuarios http://127.0.0.1:5000/usuarios POST /usuarios
+Body (raw JSON):
+{
+"nombre": "Erick",
+"email": "erick@example.com", "edad": 28
+}
+
+
+GET /usuarios/<id> http://127.0.0.1:5000/usuarios/<id> PUT /usuarios/<id>
+Body (raw JSON):
+{
+"email": "nuevo@example.com" }
+
+
+DELETE /usuarios/<id> http://127.0.0.1:5000/usuarios/<id>
+
+
+2. Prendas
+
+GET /prendas http://127.0.0.1:5000/prendas POST /prendas
+Body (raw JSON):
+{
+"nombre": "Camisa Blanca", "marca": "MarcaX", "precio": 19.99,
+"talla": "M",
+"color": "Blanco" }
+
+
+GET /prendas/<id> http://127.0.0.1:5000/prendas/<id> PUT /prendas/<id>
+Body (raw JSON):
+{
+"color": "Azul" }
+
+
+DELETE /prendas/<id>
+http://127.0.0.1:5000/prendas/<id>
+
+
+3. Marcas
+
+GET /marcas http://127.0.0.1:5000/marcas POST /marcas
+Body (raw JSON):
+{
+"nombre": "MarcaX",
+"pais": "USA" }
+
+
+GET /marcas/<id> http://127.0.0.1:5000/marcas/<id> PUT /marcas/<id>
+Body (raw JSON):
+{
+"pais": "México" }
+
+
+DELETE /marcas/<id> http://127.0.0.1:5000/marcas/<id>
+
+
+4. Ventas
+GET /ventas http://127.0.0.1:5000/ventas POST /ventas
+Body (raw JSON):
+{
+"usuario_id": "ID_USUARIO",
+"prendas_ids": ["ID_PRENDA1", "ID_PRENDA2"], "fecha": "2025-07-23",
+"total": 59.98
+}
+
+
+GET /ventas/<id> http://127.0.0.1:5000/ventas/<id> PUT /ventas/<id>
+Body (raw JSON):
+{
+"total": 65.00 }
+
+
+DELETE /ventas/<id> http://127.0.0.1:5000/ventas/<id>

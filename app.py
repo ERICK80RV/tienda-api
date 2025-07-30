@@ -4,17 +4,19 @@ from bson.objectid import ObjectId
 from bson.errors import InvalidId
 import certifi
 
+# Arrancamos la app
 app = Flask(__name__)
 
-# URI conexión MongoDB Atlas
+# Conexión a MongoDB en la nube (MongoDB Atlas)
 uri = "mongodb+srv://rpd_db:LkfxqpwRjuFDNatI@cluster0.uebuxvd.mongodb.net/?retryWrites=true&w=majority"
 client = MongoClient(uri, tlsCAFile=certifi.where())
-db = client['db_tienda']
+db = client['db_tienda']  # Esta es la base que estamos usando
 
-# ---------------- USUARIOS ----------------
+# ---------------------- USUARIOS ----------------------
 
 @app.route('/usuarios', methods=['GET'])
 def listar_usuarios():
+    # Traer todos los usuarios
     usuarios = list(db.usuarios.find())
     for usuario in usuarios:
         usuario['_id'] = str(usuario['_id'])
@@ -22,12 +24,14 @@ def listar_usuarios():
 
 @app.route('/usuarios', methods=['POST'])
 def crear_usuario():
+    # Crear un nuevo usuario
     data = request.json
     resultado = db.usuarios.insert_one(data)
     return jsonify({"mensaje": "Usuario creado", "id": str(resultado.inserted_id)}), 201
 
 @app.route('/usuarios/<id>', methods=['GET'])
 def obtener_usuario(id):
+    # Buscar usuario por ID
     try:
         usuario = db.usuarios.find_one({"_id": ObjectId(id)})
     except InvalidId:
@@ -40,6 +44,7 @@ def obtener_usuario(id):
 
 @app.route('/usuarios/<id>', methods=['PUT'])
 def actualizar_usuario(id):
+    # Actualizar usuario
     try:
         data = request.json
         resultado = db.usuarios.update_one({"_id": ObjectId(id)}, {"$set": data})
@@ -52,6 +57,7 @@ def actualizar_usuario(id):
 
 @app.route('/usuarios/<id>', methods=['DELETE'])
 def eliminar_usuario(id):
+    # Eliminar usuario
     try:
         resultado = db.usuarios.delete_one({"_id": ObjectId(id)})
     except InvalidId:
@@ -61,7 +67,7 @@ def eliminar_usuario(id):
         return jsonify({"mensaje": "Usuario eliminado"})
     return jsonify({"error": "Usuario no encontrado"}), 404
 
-# ---------------- PRENDAS ----------------
+# ---------------------- PRENDAS ----------------------
 
 @app.route('/prendas', methods=['GET'])
 def listar_prendas():
@@ -111,7 +117,7 @@ def eliminar_prenda(id):
         return jsonify({"mensaje": "Prenda eliminada"})
     return jsonify({"error": "Prenda no encontrada"}), 404
 
-# ---------------- MARCAS ----------------
+# ---------------------- MARCAS ----------------------
 
 @app.route('/marcas', methods=['GET'])
 def listar_marcas():
@@ -161,7 +167,7 @@ def eliminar_marca(id):
         return jsonify({"mensaje": "Marca eliminada"})
     return jsonify({"error": "Marca no encontrada"}), 404
 
-# ---------------- VENTAS ----------------
+# ---------------------- VENTAS ----------------------
 
 @app.route('/ventas', methods=['GET'])
 def listar_ventas():
@@ -210,6 +216,8 @@ def eliminar_venta(id):
     if resultado.deleted_count == 1:
         return jsonify({"mensaje": "Venta eliminada"})
     return jsonify({"error": "Venta no encontrada"}), 404
+
+# ---------------------- MAIN ----------------------
 
 if __name__ == '__main__':
     app.run(debug=True)
